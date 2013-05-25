@@ -3,9 +3,66 @@
 </head>
 
 <body>
-  <h1>What is happening now on our network in Trento</h2>
-  {{> events}}
+	{{> page}}
 </body>
+
+<template name="page">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Smart Fridge!©</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="{{getClass 'homePage'}}"><a href="/">Home</a></li>
+              <li class="{{getClass 'productsPage'}}"><a href="/products">Products</a></li>
+              <li class="{{getClass 'logsPage'}}"><a href="/logs">Logs</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>	
+  <div class="container">	
+  {{#if homePage}}
+     <h1>What is happening now on our network in Trento</h2>
+     {{> events}}
+  {{/if}}
+  {{#if productsPage}}
+     <h1>What you have in your fridge right now</h1>
+     <table  class="table table-striped table-bordered table-hover table-condensed">
+	    <thead>
+		   <th>Food</th>
+		   <th>Description</th>
+		   <th>Status</th>		
+		</thead>
+	    <tbody>
+	    {{#each products}}
+	       <tr>
+		     <td width="150px"><img src="http://placehold.it/140x100" ></td>
+		     <td>{{name}}</td>
+		     <td>{{value}}</td>
+		   <tr>
+	    {{/each}}
+	    </tbody>
+	 <table>
+  {{/if}}
+  {{#if logsPage}}
+     <h1>What is happening in your fridge</h1>
+     <table  class="table table-striped table-bordered table-hover table-condensed">
+	    <thead>
+		   <th>Event</th>
+		   <th>Time</th>		
+		</thead>
+	    <tbody>
+	    </tbody>
+	 <table>
+  {{/if}}	
+</div>
+</template>
 
 <template name="events">
   {{#each recent}}

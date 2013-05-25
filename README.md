@@ -10,7 +10,7 @@ Resources generate events.
 
 Get all of the resource events:
 
-    $ curl http://smartfridge.meteor.com//api/resources
+    $ curl http://smartfridge.meteor.com/api/resources
 
 Create a new event:
 
