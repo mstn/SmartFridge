@@ -1,10 +1,15 @@
 Resources = new Meteor.Collection("resources");
+Door = new Meteor.Collection("door");
 
 Meteor.startup(function () {
 	
 	Meteor.publish("resources", function () {
 	  // find all resources
 	  return Resources.find({});
+	});
+	
+	Meteor.publish("door", function(){
+		return Door.find({});
 	});
 	
 
@@ -29,4 +34,11 @@ Meteor.startup(function () {
 
     // Starts the API server
     collectionApi.start();
-  });
+
+    var http = Npm.require('http');
+	http.createServer(function (req, res) {
+	  res.writeHead(200, {'Content-Type': 'text/plain'});
+	  res.end('Hello world!');
+	}).listen(9615);
+	
+});

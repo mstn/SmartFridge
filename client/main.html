@@ -20,6 +20,7 @@
             <ul class="nav">
               <li class="{{getClass 'homePage'}}"><a href="/">Home</a></li>
               <li class="{{getClass 'productsPage'}}"><a href="/products">Products</a></li>
+			  <li class="{{getClass 'settingsPage'}}"><a href="/settings">Settings</a></li>
               <li class="{{getClass 'logsPage'}}"><a href="/logs">Logs</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -42,32 +43,41 @@
 	    <tbody>
 	    {{#each products}}
 	       <tr>
-		     <td width="150px"><img src="http://placehold.it/140x100" ></td>
-		     <td>{{name}}</td>
+		     <td width="150px"><img width="50%" src="milk.jpeg" ></td>
+		     <td>Milk Plus</td>
 		     <td>{{value}}</td>
 		   <tr>
 	    {{/each}}
 	    </tbody>
 	 <table>
   {{/if}}
+  {{#if settingsPage}}
+      <h1>Control your fridge opening hours</h1>
+      <h3>Fridge door</h3>
+	  <!--<div class="btn-group" data-toggle="buttons-radio"> -->
+	  	<button id="openBtn" type="button" class="btn btn-primary active">Open</button>
+	  	<button id="closeBtn" type="button" class="btn btn-primary">Close</button>
+	  <!-- </div> -->
+  {{/if}}
   {{#if logsPage}}
      <h1>What is happening in your fridge</h1>
      <table  class="table table-striped table-bordered table-hover table-condensed">
 	    <thead>
 		   <th>Event</th>
+		   <th>Value</th>
 		   <th>Time</th>		
 		</thead>
 	    <tbody>
+		{{#each events}}
+		    <tr>
+			  <td>{{t name}}</td>
+			  <td>{{value}}</td>
+			  <td>{{prettyDate time}}</td>
+			<tr>
+		{{/each}}
 	    </tbody>
 	 <table>
   {{/if}}	
 </div>
 </template>
 
-<template name="events">
-  {{#each recent}}
-     <p>
-	     {{name}} has value {{value}}
-	 </p>
-  {{/each}}
-</template>
