@@ -1,0 +1,16 @@
+<head>
+  <title>SmartFridge</title>
+</head>
+
+<body>
+  <h1>What is happening now on our network in Trento</h2>
+  {{> events}}
+</body>
+
+<template name="events">
+  {{#each recent}}
+     <p>
+	     {{name}} has value {{value}}
+	 </p>
+  {{/each}}
+</template>
