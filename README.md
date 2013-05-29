@@ -16,4 +16,4 @@ Create a new event:
 
     $ curl -d '{"name": "Resource Name", "value":"off"}' http://smartfridge.meteor.com/api/resources
 
-N.B. The proxy.js which is provided here is designed for OpenPicus, compiled with firmware standard web project with demo web server. If you use different hardware, or different firmware, please change proxy.js accordingly. Anyway, please update the IP/DNS addresses provided to the ones which fit your needs.
+N.B.  proxy.js provided here is designed for OpenPicus, compiled with firmware standard web project with demo web server. If you use different hardware, or different firmware, please change proxy.js accordingly. Anyway, please update the IP/DNS addresses provided to the ones which fit your needs.
