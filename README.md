@@ -6,7 +6,7 @@ Use our REST api to build a cool mobile app!
 
 Resources are attuators or sensors.
 
-Resources generate a data stream from which events are extracted through proxy.js*. Our API processes those events.
+Resources generate a data stream from which events are extracted through proxy.js. Our API processes those events.
 
 Get all of the resource events:
 
