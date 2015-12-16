@@ -10,7 +10,7 @@ Resources generate a data stream from which events are extracted through proxy.j
 
 Get all of the resource events:
 
-    $ curl http://smartfridge.meteor.com/api/resources
+    $ curl http://localhost:3000/api/resources
 
 Create a new event:
 
